@@ -1,0 +1,37 @@
+{
+  "name": "Notification",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "info",
+        "success",
+        "warning",
+        "error"
+      ],
+      "default": "info"
+    },
+    "read": {
+      "type": "boolean",
+      "default": false
+    },
+    "user_email": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string",
+      "description": "Optional link to related page"
+    }
+  },
+  "required": [
+    "title",
+    "message"
+  ]
+}
