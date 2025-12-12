@@ -1,0 +1,63 @@
+{
+  "name": "SystemSettings",
+  "type": "object",
+  "properties": {
+    "setting_key": {
+      "type": "string",
+      "description": "Unique setting identifier"
+    },
+    "validation_frequency": {
+      "type": "string",
+      "enum": [
+        "daily",
+        "weekly",
+        "monthly",
+        "manual"
+      ],
+      "default": "weekly"
+    },
+    "confidence_threshold": {
+      "type": "number",
+      "default": 70,
+      "description": "Minimum confidence score to auto-approve"
+    },
+    "auto_approve_enabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "data_sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "priority": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "notification_settings": {
+      "type": "object",
+      "properties": {
+        "email_on_completion": {
+          "type": "boolean"
+        },
+        "email_on_low_confidence": {
+          "type": "boolean"
+        },
+        "low_confidence_threshold": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  "required": [
+    "setting_key"
+  ]
+}
