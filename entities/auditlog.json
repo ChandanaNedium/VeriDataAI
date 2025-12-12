@@ -1,0 +1,45 @@
+{
+  "name": "AuditLog",
+  "type": "object",
+  "properties": {
+    "action": {
+      "type": "string",
+      "enum": [
+        "upload",
+        "validation_run",
+        "record_approved",
+        "record_rejected",
+        "record_edited",
+        "settings_changed",
+        "export"
+      ],
+      "description": "Type of action performed"
+    },
+    "description": {
+      "type": "string",
+      "description": "Human readable description"
+    },
+    "provider_id": {
+      "type": "string",
+      "description": "Related provider ID if applicable"
+    },
+    "batch_id": {
+      "type": "string",
+      "description": "Related batch ID if applicable"
+    },
+    "changes": {
+      "type": "object",
+      "description": "Details of changes made"
+    },
+    "user_email": {
+      "type": "string"
+    },
+    "user_role": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "action",
+    "description"
+  ]
+}
