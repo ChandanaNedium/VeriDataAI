@@ -1,0 +1,53 @@
+{
+  "name": "ValidationBatch",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Batch name"
+    },
+    "file_name": {
+      "type": "string",
+      "description": "Original file name"
+    },
+    "total_records": {
+      "type": "number"
+    },
+    "validated_count": {
+      "type": "number"
+    },
+    "flagged_count": {
+      "type": "number"
+    },
+    "approved_count": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "uploading",
+        "validating",
+        "completed",
+        "failed"
+      ],
+      "default": "uploading"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "web",
+        "mobile",
+        "print"
+      ]
+    },
+    "accuracy_before": {
+      "type": "number"
+    },
+    "accuracy_after": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}
