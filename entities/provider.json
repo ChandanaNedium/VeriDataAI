@@ -1,0 +1,112 @@
+{
+  "name": "Provider",
+  "type": "object",
+  "properties": {
+    "npi": {
+      "type": "string",
+      "description": "National Provider Identifier"
+    },
+    "name": {
+      "type": "string",
+      "description": "Provider full name"
+    },
+    "specialty": {
+      "type": "string",
+      "description": "Medical specialty"
+    },
+    "organization": {
+      "type": "string",
+      "description": "Organization or practice name"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Contact phone number"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email address"
+    },
+    "website": {
+      "type": "string",
+      "description": "Website URL"
+    },
+    "address": {
+      "type": "string",
+      "description": "Street address"
+    },
+    "city": {
+      "type": "string",
+      "description": "City"
+    },
+    "state": {
+      "type": "string",
+      "description": "State"
+    },
+    "zip": {
+      "type": "string",
+      "description": "ZIP code"
+    },
+    "license_number": {
+      "type": "string",
+      "description": "Medical license number"
+    },
+    "license_state": {
+      "type": "string",
+      "description": "State of licensure"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "validated",
+        "flagged",
+        "approved",
+        "rejected"
+      ],
+      "default": "pending"
+    },
+    "confidence_score": {
+      "type": "number",
+      "description": "AI confidence score 0-100"
+    },
+    "validation_results": {
+      "type": "object",
+      "description": "Detailed validation results for each field"
+    },
+    "ai_suggestions": {
+      "type": "object",
+      "description": "AI suggested corrections"
+    },
+    "original_data": {
+      "type": "object",
+      "description": "Original uploaded data before corrections"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "web",
+        "mobile",
+        "print"
+      ],
+      "description": "Directory source"
+    },
+    "batch_id": {
+      "type": "string",
+      "description": "Upload batch identifier"
+    },
+    "last_validated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "reviewed_by": {
+      "type": "string",
+      "description": "Email of reviewer"
+    },
+    "review_notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}
